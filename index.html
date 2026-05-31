@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jarvis Investor · US market intelligence for everyday investors</title>
+<meta name="description" content="Jarvis Investor — a self-improving, plain-English read on US stocks, sectors and commodities. What to consider, what to avoid, and why — for everyday investors. Educational, not financial advice.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--ink:#e8eef7;--muted:#8a99b5;--dim:#5d6b86;--line:rgba(148,163,184,.13)}
+body{margin:0;background:#070b16;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(900px 500px at 16% -8%,rgba(56,189,248,.10),transparent 60%),radial-gradient(820px 480px at 88% 4%,rgba(34,197,94,.08),transparent 62%),linear-gradient(rgba(148,163,184,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.035) 1px,transparent 1px);
+ background-size:auto,auto,44px 44px,44px 44px;background-attachment:fixed}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 18px 70px}
+.top{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.wm{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;color:#fff;letter-spacing:-.6px}
+.tsub{color:var(--muted);font-size:13px}
+.upd{margin-left:auto;color:var(--dim);font-size:12px;font-family:'IBM Plex Mono',monospace}
+.back{display:inline-block;margin:14px 0 0;color:var(--muted);font-size:12.5px;text-decoration:none}.back:hover{color:#38bdf8}
+.disc{margin-top:10px;font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:rgba(148,163,184,.04)}
+.card{margin-top:16px;background:linear-gradient(180deg,rgba(22,32,53,.55),rgba(15,23,42,.5));border:1px solid var(--line);border-radius:15px;padding:18px 20px;backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.card-h{font-size:11px;letter-spacing:2.2px;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.regime{background:linear-gradient(135deg,rgba(34,197,94,.10),rgba(15,23,42,.5));border-color:#22c55e44}
+.regime .lab{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#22c55e}
+.regime .conf{margin-left:10px}
+.regime .sum{color:#c2cde0;font-size:14px;line-height:1.65;margin-top:10px}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.stat{background:rgba(148,163,184,.05);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.stat-l{font-size:9.5px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;font-weight:600}
+.stat-v{font-size:18px;font-weight:700;margin-top:4px;font-family:'IBM Plex Mono',monospace}
+.stat-v .d{font-size:11px;font-weight:500}
+.heatmap{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.hx{border:1px solid var(--line);border-radius:10px;padding:12px 13px}
+.hx-n{font-size:12px;color:#cdd8ec;font-weight:600}
+.hx-p{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:700;margin-top:4px}
+.drv{display:flex;flex-direction:column;gap:3px;padding:9px 0;border-bottom:1px solid var(--line)}
+.drv:last-child{border-bottom:none}.drv b{color:#fff;font-size:13.5px}.drv span{color:var(--muted);font-size:13px;line-height:1.55}
+.call{background:rgba(148,163,184,.04);border:1px solid var(--line);border-left:3px solid;border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.call-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.call-h b{color:#fff;font-size:15px}
+.tk{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);background:rgba(148,163,184,.1);padding:1px 6px;border-radius:5px}
+.conf{font-size:10px;font-weight:700;letter-spacing:.5px;border:1px solid;border-radius:6px;padding:2px 8px;margin-left:auto}
+.call-r{color:#c2cde0;font-size:13px;line-height:1.6;margin-top:7px}
+.cols{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.col-h{font-size:12px;font-weight:700;margin-bottom:8px}
+.prose{color:#c2cde0;font-size:13.5px;line-height:1.72;border-left:2px solid;border-image:linear-gradient(180deg,#38bdf8,#22c55e) 1;padding-left:13px}
+.beg{margin-top:12px;background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.2);border-radius:11px;padding:13px 15px;font-size:13.5px;line-height:1.65;color:#cdd8ec}
+.beg b{color:#fff}
+.hls{display:flex;flex-direction:column}
+.hl{display:block;padding:9px 0;border-bottom:1px solid var(--line);color:#cdd8ec;font-size:13px;text-decoration:none;line-height:1.5}
+.hl:last-child{border-bottom:none}.hl:hover{color:#fff}
+.hl-s{font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-right:9px;text-transform:uppercase;letter-spacing:.5px}
+.foot{margin-top:26px;color:var(--dim);font-size:11.5px;text-align:center;line-height:1.9}.foot a{color:var(--muted);text-decoration:none}
+@media(max-width:640px){.cols{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+  <div class="top"><svg width="34" height="34" viewBox="0 0 28 28" style="border-radius:7px;box-shadow:0 0 0 1px rgba(148,163,184,.18)"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b4079"/><stop offset="1" stop-color="#0e1a35"/></linearGradient></defs><rect width="28" height="28" rx="7" fill="url(#cg)"/><path d="M14 5.4 Q14 14 22.6 14 Q14 14 14 22.6 Q14 14 5.4 14 Q14 14 14 5.4 Z" fill="#fff"/></svg><span class="wm">Jarvis Investor</span><span class="tsub">· US market intelligence, in plain English</span>
+    <span class="upd">view 2026-05-31 11:05 SGT</span></div>
+  <a class="back" href="https://adamdegoat.github.io/jarvis/">← back to Jarvis</a>
+  <div class="disc">📚 <b>Educational research — not financial advice.</b> A self-improving read on the US market for everyday investors. We explain what to <i>consider</i> and <i>avoid</i> and <i>why</i> — you make your own decisions. Investing carries risk.</div>
+
+  <div class="card regime">
+    <div class="card-h">◇ The market right now</div>
+    <div><span class="lab">Risk-on · Uptrend</span><span class="conf" style="color:#22c55e;border-color:#22c55e66">High conviction</span></div>
+    <div class="sum">The S&amp;P 500 is trading comfortably above its 50- and 200-day averages (+7% and +11%), and the VIX 'fear gauge' is low at ~15. In plain terms: the trend is up and the market is calm. The catch is that almost all the gains are coming from one place — Big Tech — while small caps and most other sectors are flat. A healthy bull broadens out; this one hasn't yet.</div>
+  </div>
+
+  <div class="card"><div class="card-h">◇ Indices &amp; volatility <span style="color:var(--dim);font-weight:400;letter-spacing:0;text-transform:none">· data 2026-05-31 10:59 SGT</span></div>
+    <div class="grid"><div class="stat"><div class="stat-l">S&amp;P 500</div><div class="stat-v">7,580<span class="d" style="color:#22c55e"> +0.2%</span></div></div><div class="stat"><div class="stat-l">Nasdaq</div><div class="stat-v">26,973<span class="d" style="color:#22c55e"> +0.2%</span></div></div><div class="stat"><div class="stat-l">Dow Jones</div><div class="stat-v">51,032<span class="d" style="color:#22c55e"> +0.7%</span></div></div><div class="stat"><div class="stat-l">Russell 2000</div><div class="stat-v">2,919<span class="d" style="color:#f43f5e"> -0.6%</span></div></div><div class="stat"><div class="stat-l">VIX (fear)</div><div class="stat-v">15.3<span class="d" style="color:#8a99b5"> calm</span></div></div></div></div>
+
+  <div class="card"><div class="card-h">◇ Sector heatmap <span style="color:var(--dim);font-weight:400;letter-spacing:0;text-transform:none">· 1-month performance · green = leading, red = lagging</span></div>
+    <div class="heatmap"><div class="hx" style="background:rgba(34,197,94,0.64)"><div class="hx-n">Technology</div><div class="hx-p" style="color:#22c55e">+20.1%</div></div><div class="hx" style="background:rgba(34,197,94,0.43)"><div class="hx-n">Health Care</div><div class="hx-p" style="color:#22c55e">+4.6%</div></div><div class="hx" style="background:rgba(34,197,94,0.36)"><div class="hx-n">Consumer Disc.</div><div class="hx-p" style="color:#22c55e">+3.5%</div></div><div class="hx" style="background:rgba(34,197,94,0.26)"><div class="hx-n">Industrials</div><div class="hx-p" style="color:#22c55e">+1.9%</div></div><div class="hx" style="background:rgba(34,197,94,0.19)"><div class="hx-n">Real Estate</div><div class="hx-p" style="color:#22c55e">+0.8%</div></div><div class="hx" style="background:rgba(34,197,94,0.16)"><div class="hx-n">Materials</div><div class="hx-p" style="color:#22c55e">+0.4%</div></div><div class="hx" style="background:rgba(34,197,94,0.16)"><div class="hx-n">Communication</div><div class="hx-p" style="color:#22c55e">+0.3%</div></div><div class="hx" style="background:rgba(244,63,94,0.14)"><div class="hx-n">Consumer Staples</div><div class="hx-p" style="color:#e8eef7">-0.0%</div></div><div class="hx" style="background:rgba(244,63,94,0.18)"><div class="hx-n">Financials</div><div class="hx-p" style="color:#f43f5e">-0.7%</div></div><div class="hx" style="background:rgba(244,63,94,0.31)"><div class="hx-n">Utilities</div><div class="hx-p" style="color:#f43f5e">-2.8%</div></div><div class="hx" style="background:rgba(244,63,94,0.43)"><div class="hx-n">Energy</div><div class="hx-p" style="color:#f43f5e">-4.6%</div></div></div></div>
+
+  <div class="card"><div class="card-h">◇ What's driving markets</div><div class="drv"><b>Big Tech is carrying everything</b><span>Technology is up ~38% over three months and is the single reason the index is rising. The AI-spending story keeps drawing institutional money. It's powerful — but it means if Tech wobbles, the whole market feels it.</span></div><div class="drv"><b>Oil just rolled over hard</b><span>Crude oil fell ~14% in a month. That eases inflation pressure and helps consumers (cheaper gas), but it's a headwind for Energy stocks — which are the weakest sector right now.</span></div><div class="drv"><b>Rates and the dollar are steady-to-easy</b><span>The 10-year Treasury yield is ~4.45% and the US dollar is soft (~99). Neither is tightening the screws on stocks, which keeps the backdrop supportive for risk assets.</span></div></div>
+
+  <div class="card"><div class="card-h">◇ Sectors — consider / be cautious <span style="color:var(--dim);font-weight:400;letter-spacing:0;text-transform:none">· with our conviction &amp; reasoning</span></div>
+    <div class="cols">
+      <div><div class="col-h" style="color:#22c55e">✓ Worth considering</div><div class="call" style="border-left-color:#22c55e"><div class="call-h"><b>Technology</b> <span class="tk">XLK</span><span class="conf" style="color:#f59e0b;border-color:#f59e0b66">Medium conviction</span></div><div class="call-r">The clear leader and the market's engine — the trend is firmly your friend. But it's extended (+31% above its 200-day average), so this is 'own the trend, don't chase the spikes,' not 'pile in at any price.'</div></div><div class="call" style="border-left-color:#22c55e"><div class="call-h"><b>Industrials</b> <span class="tk">XLI</span><span class="conf" style="color:#8a99b5;border-color:#8a99b566">Low conviction</span></div><div class="call-r">Quietly constructive — above its 200-day average and holding up while flashier sectors stall. A steadier way to stay invested if you're wary of Tech's stretch.</div></div></div>
+      <div><div class="col-h" style="color:#f43f5e">⚠ Be cautious</div><div class="call" style="border-left-color:#f43f5e"><div class="call-h"><b>Energy</b> <span class="tk">XLE</span><span class="conf" style="color:#f59e0b;border-color:#f59e0b66">Medium conviction</span></div><div class="call-r">The weakest sector this month (−5%) as oil rolls over. Short-term momentum has broken — not a place to reach for right now.</div></div><div class="call" style="border-left-color:#f43f5e"><div class="call-h"><b>Utilities</b> <span class="tk">XLU</span><span class="conf" style="color:#8a99b5;border-color:#8a99b566">Low conviction</span></div><div class="call-r">Lagging in a risk-on tape (−3% this month) — defensives tend to trail when the market is calm and rising. Fine for income, not for momentum.</div></div></div>
+    </div></div>
+
+  
+
+  <div class="card"><div class="card-h">◇ Commodities <span style="color:var(--dim);font-weight:400;letter-spacing:0;text-transform:none">· what they mean for your portfolio</span></div><div class="call" style="border-left-color:#f59e0b"><div class="call-h"><b>Crude Oil</b><span class="conf" style="color:#f59e0b;border-color:#f59e0b66">Cautious</span></div><div class="call-r">Down ~14% in a month after a big run — momentum has clearly broken short-term. Good for inflation, tough for energy bulls.</div></div><div class="call" style="border-left-color:#f59e0b"><div class="call-h"><b>Gold</b><span class="conf" style="color:#f59e0b;border-color:#f59e0b66">Neutral / soft</span></div><div class="call-r">Drifting (−14% over three months). With the dollar only mildly soft and real yields still positive, gold lacks a clear tailwind here.</div></div><div class="call" style="border-left-color:#f59e0b"><div class="call-h"><b>Natural Gas</b><span class="conf" style="color:#f59e0b;border-color:#f59e0b66">Speculative</span></div><div class="call-r">Up ~18% in a month — hot, but notoriously volatile. Not for the faint-hearted.</div></div></div>
+
+  <div class="card"><div class="card-h">◇ The macro picture</div>
+    <div class="grid" style="margin-bottom:12px"><div class="stat"><div class="stat-l">10Y Treasury Yield</div><div class="stat-v">4.45</div></div><div class="stat"><div class="stat-l">US Dollar (DXY)</div><div class="stat-v">98.91</div></div><div class="stat"><div class="stat-l">Gold</div><div class="stat-v" style="color:#f43f5e">-0.1%<span class="d" style="color:#8a99b5"> 1mo</span></div></div><div class="stat"><div class="stat-l">Silver</div><div class="stat-v" style="color:#22c55e">+5.4%<span class="d" style="color:#8a99b5"> 1mo</span></div></div><div class="stat"><div class="stat-l">Crude Oil</div><div class="stat-v" style="color:#f43f5e">-14.3%<span class="d" style="color:#8a99b5"> 1mo</span></div></div><div class="stat"><div class="stat-l">Natural Gas</div><div class="stat-v" style="color:#22c55e">+17.5%<span class="d" style="color:#8a99b5"> 1mo</span></div></div><div class="stat"><div class="stat-l">Base Metals</div><div class="stat-v" style="color:#22c55e">+5.4%<span class="d" style="color:#8a99b5"> 1mo</span></div></div><div class="stat"><div class="stat-l">Agriculture</div><div class="stat-v" style="color:#f43f5e">-3.1%<span class="d" style="color:#8a99b5"> 1mo</span></div></div></div>
+    <div class="prose">The backdrop is supportive: rates are stable (~4.45% on the 10-year), the dollar is soft, and volatility is low. That's a 'goldilocks-ish' setup for stocks — not too hot, not too cold. The one thing to watch isn't a macro number, it's market *internals*: leadership is narrow (Tech-only). The bullish case strengthens a lot if other sectors start joining the rally; it weakens if Tech alone is holding up the index.</div>
+    <div class="beg"><b>🟢 If you're newer to investing:</b> The market is in a calm uptrend, but it's being driven almost entirely by big technology companies. That's good news — until it isn't. Because so much depends on tech right now, a tech stumble would hurt more than usual. The boring-but-smart move: stay invested in the trend, but don't put all your eggs in the hottest names, and don't chase a stock just because it's up a lot. Diversification matters most exactly when one corner of the market is doing all the work.</div>
+  </div>
+
+  <div class="card"><div class="card-h">◇ Latest headlines <span style="color:var(--dim);font-weight:400;letter-spacing:0;text-transform:none">· 2026-05-31 11:01 SGT</span></div>
+    <div class="hls"><a class="hl" href="https://www.marketwatch.com/story/it-is-such-a-fine-line-i-am-a-cfp-and-see-nothing-wrong-with-networking-on-the-golf-course-am-i-wrong-50a698e8?mod=mw_rss_topstories" target="_blank" rel="noopener"><span class="hl-s">MarketWatch</span>‘It is such a fine line’: I am a CFP and see nothing wrong with networking on the golf course. Am I wrong?</a><a class="hl" href="https://www.marketwatch.com/story/i-have-no-preexisting-conditions-im-56-earn-198-000-and-want-to-retire-early-can-i-afford-private-healthcare-e80cdd26?mod=mw_rss_topstories" target="_blank" rel="noopener"><span class="hl-s">MarketWatch</span>‘I have no preexisting conditions’: I’m 56, earn $198,000 and want to retire early. Can I afford private healthcare?</a><a class="hl" href="https://www.marketwatch.com/story/in-america-big-techs-ai-data-centers-come-first-and-your-community-will-be-last-to-know-06a3fce4?mod=mw_rss_topstories" target="_blank" rel="noopener"><span class="hl-s">MarketWatch</span>As Big Tech’s power demand surges, data centers bring utilities a huge new profit center</a><a class="hl" href="https://www.marketwatch.com/story/chinas-next-export-shock-walks-on-two-legs-and-costs-less-than-a-used-car-f0becf3f?mod=mw_rss_topstories" target="_blank" rel="noopener"><span class="hl-s">MarketWatch</span>China’s next export shock walks on two legs — and costs less than a used car</a><a class="hl" href="https://www.marketwatch.com/story/why-double-digit-earnings-growth-wont-stop-the-next-bear-market-791ae3ef?mod=mw_rss_topstories" target="_blank" rel="noopener"><span class="hl-s">MarketWatch</span>Why double-digit earnings growth won’t stop the next bear market</a><a class="hl" href="https://www.marketwatch.com/story/why-america-is-losing-the-ai-productivity-war-to-3-5-million-chinese-stem-graduates-4ffeb298?mod=mw_rss_topstories" target="_blank" rel="noopener"><span class="hl-s">MarketWatch</span>America is losing the AI productivity war to 3.5 million Chinese STEM graduates</a></div></div>
+
+  <div class="foot">Jarvis Investor — autonomous, self-improving US market research. Educational only · <b>not financial advice</b>. Do your own research.<br>
+    <a href="https://adamdegoat.github.io/jarvis/">adamdegoat.github.io/jarvis</a> · updated 2026-05-31 11:04 SGT</div>
+</div></body></html>
